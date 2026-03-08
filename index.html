@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch Interior | Creating Lasting Impressions</title>
+    <meta name="description"
+        content="Based in Chennai, Arch Interior blends functionality, elegance, and personal expression through premium interior design and in-house execution.">
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/logo.webp" alt="Arch Interior Logo"
+                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAyMDAgNTAiIGZpbGw9IiNmZmYiPjx0ZXh0IHk9IjM1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyOCIgZm9udC13ZWlnaHQ9ImJvbGQiPkFyY2ggSW50ZXJpb3I8L3RleHQ+PC9zdmc+'" />
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#factories" class="nav-link">Factory</a></li>
+                    <li><a href="projects.html" class="nav-link">Our Projects</a></li>
+                    <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="carousel-container">
+                <div class="carousel-slide active" style="background-image: url('images/modular_interior.webp');"></div>
+                <div class="carousel-slide" style="background-image: url('images/modular_kitchen.webp');"></div>
+                <div class="carousel-slide" style="background-image: url('images/modular_bedroom.webp');"></div>
+                <div class="carousel-slide" style="background-image: url('images/wardrobe.webp');"></div>
+                <div class="carousel-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="animate-up hero-title text-primary">CREATING LASTING IMPRESSIONS<br>THROUGH INTERIOR DESIGN
+                </h1>
+                <p class="animate-up delay-1">Premium residential and commercial spaces tailored to your vision.</p>
+                <div class="hero-buttons animate-up delay-2">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+            <button class="carousel-btn next-btn" aria-label="Next Slide">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section class="offer-section section-padding" id="offerings">
+            <div class="section-container">
+                <div class="gallery-header reveal">
+                    <h2 class="gallery-main-title" style="color: var(--brand-orange);">What We Offer</h2>
+                </div>
+
+                <div class="offer-grid reveal">
+                    <!-- Residential Column -->
+                    <div class="offer-column">
+                        <a href="projects.html?filter=residential" class="offer-col-link">
+                            <h3 class="offer-category-title">Residential</h3>
+                            <div class="offer-main-icon">
+                                <img src="images/home.webp" alt="Residential" style="width: 100px; height: auto;">
+                            </div>
+                        </a>
+                        <div class="offer-icons-grid">
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">bed</span>
+                                <span>Bedroom</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">kitchen</span>
+                                <span>Kitchen</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">bathtub</span>
+                                <span>Bath</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">weekend</span>
+                                <span>Living</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">curtains</span>
+                                <span>Curtains</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">lightbulb</span>
+                                <span>Lighting</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">potted_plant</span>
+                                <span>Plants</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">table_restaurant</span>
+                                <span>Dining</span>
+                            </a>
+                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                                <span class="material-symbols-outlined">balcony</span>
+                                <span>Balcony</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="offer-separator"></div>
+
+                    <!-- Commercial Column -->
+                    <div class="offer-column">
+                        <a href="projects.html?filter=commercial" class="offer-col-link">
+                            <h3 class="offer-category-title">Commercial</h3>
+                            <div class="offer-main-icon">
+                                <img src="images/commerical.webp" alt="Commercial" style="width: 100px; height: auto;">
+                            </div>
+                        </a>
+                        <div class="offer-icons-grid">
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">storefront</span>
+                                <span>Store</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">chair_alt</span>
+                                <span>Office Chair</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">meeting_room</span>
+                                <span>Cabin</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">local_cafe</span>
+                                <span>Cafeteria</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">curtains</span>
+                                <span>Curtains</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">lightbulb</span>
+                                <span>Lighting</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">potted_plant</span>
+                                <span>Plants</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">tv</span>
+                                <span>TV</span>
+                            </a>
+                            <a href="projects.html?filter=commercial" class="offer-icon-item">
+                                <span class="material-symbols-outlined">desk</span>
+                                <span>Desk</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section section-padding" id="about">
+            <div class="section-container about-grid">
+                <div class="about-text reveal left">
+                    <h2>About Us</h2>
+                    <p class="highlight-text">At Arch Interior, we believe great design is a powerful blend of
+                        functionality, elegance, and personal expression.</p>
+                    <p>Based in Chennai, we specialize in delivering immaculate interior solutions for modern living
+                        spaces and professional work environments. We operate with an in-house factory ensuring top-tier
+                        quality control from conceptualization to the final build.</p>
+
+                    <ul class="animated-list">
+                        <li>Layout planning</li>
+                        <li>3D visualization</li>
+                        <li>Material selection</li>
+                        <li>Furniture making</li>
+                        <li>Final installation</li>
+                    </ul>
+                </div>
+                <div class="about-image reveal right">
+                    <div class="image-wrapper glass-panel">
+                        <img src="images/aboutus_image.webp" alt="Arch Interior Team Work"
+                            onerror="this.src='https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&q=80'">
+                        <div class="experience-badge">
+                            <span class="number">10+</span>
+                            <span class="text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Factories -->
+        <section class="factories-section section-padding" id="factories">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2>Our In-House Factories</h2>
+                    <p>Where precision meets craftsmanship</p>
+                </div>
+
+                <div class="factory-grid">
+                    <!-- Aluminium Factory -->
+                    <article class="factory-card reveal stagger">
+                        <div class="video-container">
+                            <video autoplay muted loop playsinline poster="images/aluminium_factory.webp"
+                                class="factory-video">
+                                <source src="images/videos/arch_aluminium_factory.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <button class="v-control-btn play-pause" aria-label="Play/Pause">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <button class="v-control-btn mute-toggle" aria-label="Mute/Unmute">
+                                    <span class="material-symbols-outlined">volume_off</span>
+                                </button>
+                                <button class="v-control-btn fullscreen-btn" aria-label="Fullscreen">
+                                    <span class="material-symbols-outlined">fullscreen</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="factory-info glass-panel">
+                            <h3>Aluminium Factory</h3>
+                            <p><i class="icon-location"></i> Thirumulaivoyil Ambattur</p>
+                            <p><i class="icon-area"></i> 2500 sqft</p>
+                        </div>
+                    </article>
+
+                    <!-- Wood Factory -->
+                    <article class="factory-card reveal stagger delay-1">
+                        <div class="video-container">
+                            <video autoplay muted loop playsinline poster="images/wooden_factory.webp"
+                                class="factory-video">
+                                <source src="images/videos/arch_wood_factory.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-controls">
+                                <button class="v-control-btn play-pause" aria-label="Play/Pause">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <button class="v-control-btn mute-toggle" aria-label="Mute/Unmute">
+                                    <span class="material-symbols-outlined">volume_off</span>
+                                </button>
+                                <button class="v-control-btn fullscreen-btn" aria-label="Fullscreen">
+                                    <span class="material-symbols-outlined">fullscreen</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="factory-info glass-panel">
+                            <h3>Wood Factory</h3>
+                            <p><i class="icon-location"></i> Thirumulaivoyil Ambattur</p>
+                            <p><i class="icon-area"></i> 3000 sqft</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Clients -->
+        <section class="clients-section section-padding" id="clients">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2>Our Clients</h2>
+                    <p>Trusted by industry leaders and esteemed organizations.</p>
+                </div>
+                <div class="clients-marquee reveal">
+                    <div class="marquee-track">
+                        <img src="images/ashok_leyland_logo.webp" alt="Client 1"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+1'">
+                        <img src="images/brakes_india.webp" alt="Client 2"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+2'">
+                        <img src="images/century_ply.png" alt="Client 3"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+3'">
+
+                        <img src="images/indocool.webp" alt="Client 6"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+6'">
+                        <img src="images/km.png" alt="Client 7"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+7'">
+                        <img src="images/opmobility.png" alt="Client 8"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+8'">
+                        <img src="images/rks.webp" alt="Client 9"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+9'">
+                        <img src="images/sundaram.webp" alt="Client 10"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+10'">
+                        <img src="images/swanag.webp" alt="Client 11"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+11'">
+                        <img src="images/tidc.webp" alt="Client 12"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+12'">
+                        <!-- Duplicated for Infinite Loop -->
+                        <img src="images/ashok_leyland_logo.webp" alt="Client 1"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+1'">
+                        <img src="images/brakes_india.webp" alt="Client 2"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+2'">
+                        <img src="images/century_ply.png" alt="Client 3"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+3'">
+                        <img src="images/indocool.webp" alt="Client 6"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+6'">
+                        <img src="images/km.png" alt="Client 7"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+7'">
+                        <img src="images/opmobility.png" alt="Client 8"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+8'">
+                        <img src="images/rks.webp" alt="Client 9"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+9'">
+                        <img src="images/sundaram.webp" alt="Client 10"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+10'">
+                        <img src="images/swanag.webp" alt="Client 11"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+11'">
+                        <img src="images/tidc.webp" alt="Client 12"
+                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+12'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section-padding" id="contact">
+            <div class="section-container contact-grid">
+                <div class="contact-info reveal left">
+                    <h2>Let's Talk</h2>
+                    <p>Ready to transform your space? Get in touch with us today for a consultation.</p>
+
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <h4>Address</h4>
+                                <p>No 122, Nainiammal St,<br>Krishnapuram Ambattur,<br>Chennai - 600053</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9003212777, +91 9941584255</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">✉️</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="https://www.archinterior.in"
+                                        target="_blank">www.archinterior.in</a><br>enquiry@archinterior.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal right">
+                    <form class="glass-form glass-panel" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" " />
+                            <label for="name">Your Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" " />
+                            <label for="email">Email Address</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="ripple"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.webp" alt="Arch Interior" class="footer-logo"
+                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAyMDAgNTAiIGZpbGw9IiNjY2MiPjx0ZXh0IHk9IjM1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiPkFyY2ggSW50ZXJpb3I8L3RleHQ+PC9zdmc+'">
+                <p>Creating lasting impressions through exceptional interior design and unparalleled craftsmanship.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="LinkedIn">IN</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#factories">Factories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Residential Design</a></li>
+                    <li><a href="#">Commercial Layouts</a></li>
+                    <li><a href="#">Custom Furniture</a></li>
+                    <li><a href="#">3D Visualization</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Arch Interior. All rights reserved. Based in Chennai.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
