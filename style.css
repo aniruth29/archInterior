@@ -1352,7 +1352,7 @@ img {
    What We Offer Section
    ========================================= */
 .offer-section {
-    background-color: var(--bg-offer);
+    background-color: var(--bg-main);
     color: var(--text-main);
 }
 
