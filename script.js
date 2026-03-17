@@ -10,24 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky Nav on Scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+        navbar.classList.add('scrolled');
     });
 
+    // Add on page load too
+    navbar.classList.add('scrolled');
+
     // Mobile Menu Toggle
-    mobileBtn.addEventListener('click', () => {
-        mobileBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
 
     // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            mobileBtn.classList.remove('active');
-            navLinks.classList.remove('active');
+            if (mobileBtn) mobileBtn.classList.remove('active');
+            if (navLinks) navLinks.classList.remove('active');
         });
     });
 
@@ -39,79 +40,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
 
-    let currentSlide = 0;
-    const slideCount = slides.length;
-    let slideInterval;
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        let slideInterval;
 
-    const goToSlide = (n) => {
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
+        const goToSlide = (n) => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
 
-        currentSlide = (n + slideCount) % slideCount;
+            currentSlide = (n + slideCount) % slideCount;
 
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    };
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        };
 
-    const nextSlide = () => goToSlide(currentSlide + 1);
-    const prevSlide = () => goToSlide(currentSlide - 1);
+        const nextSlide = () => goToSlide(currentSlide + 1);
+        const prevSlide = () => goToSlide(currentSlide - 1);
 
-    // Initial Trigger for Hero Text animations
-    setTimeout(() => {
-        document.querySelectorAll('.hero-content .animate-up').forEach(el => {
-            el.classList.add('visible');
+        // Initial Trigger for Hero Text animations
+        setTimeout(() => {
+            document.querySelectorAll('.hero-content .animate-up').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 100);
+
+        // Start Auto Play
+        const startSlideShow = () => {
+            slideInterval = setInterval(nextSlide, 4000);
+        };
+
+        const resetSlideShow = () => {
+            clearInterval(slideInterval);
+            startSlideShow();
+        };
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetSlideShow(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetSlideShow(); });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetSlideShow();
+            });
         });
-    }, 100);
 
-    // Start Auto Play
-    const startSlideShow = () => {
-        slideInterval = setInterval(nextSlide, 4000);
-    };
-
-    const resetSlideShow = () => {
-        clearInterval(slideInterval);
         startSlideShow();
-    };
-
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetSlideShow();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetSlideShow();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            resetSlideShow();
-        });
-    });
-
-    startSlideShow();
+    }
 
     /* =========================================
        Intersection Observer for Scroll Animations
        ========================================= */
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
     };
 
     const revealOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-
-                // If the target is the about section animated list, add visible to it
-                if (entry.target.classList.contains('animated-list')) {
-                    entry.target.classList.add('visible');
-                }
-
-                // Optional: Stop observing once revealed
                 observer.unobserve(entry.target);
             }
         });
@@ -120,6 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observe all reveal elements
     document.querySelectorAll('.reveal').forEach(el => {
         revealOnScroll.observe(el);
+    });
+
+    // Immediately reveal elements already visible in viewport on page load
+    document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('visible');
+        }
     });
 
     // Separately observe the unordered list for stagger effect
@@ -132,20 +129,22 @@ document.addEventListener('DOMContentLoaded', () => {
        Form Submission interaction (Ripple Effect)
        ========================================= */
     const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('.submit-btn');
-        btn.innerHTML = 'Message Sent! ✓';
-        btn.style.backgroundColor = '#4bb543'; // Success color
-        btn.style.color = '#fff';
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('.submit-btn');
+            btn.innerHTML = 'Message Sent! ✓';
+            btn.style.backgroundColor = '#4bb543';
+            btn.style.color = '#fff';
 
-        setTimeout(() => {
-            form.reset();
-            btn.innerHTML = '<span class="btn-text">Send Message</span><span class="ripple"></span>';
-            btn.style.backgroundColor = '';
-            btn.style.color = '';
-        }, 3000);
-    });
+            setTimeout(() => {
+                form.reset();
+                btn.innerHTML = '<span class="btn-text">Send Message</span><span class="ripple"></span>';
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            }, 3000);
+        });
+    }
 
     /* =========================================
        Factory Video Controls
