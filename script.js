@@ -126,6 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =========================================
+       Parallax Effect for Banners
+       ========================================= */
+    const banners = document.querySelectorAll('.page-banner');
+    if (banners.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            banners.forEach(banner => {
+                banner.style.backgroundPositionY = `${scrollPos * 0.3}px`;
+            });
+        });
+    }
+
+    /* =========================================
        Form Submission interaction (Ripple Effect)
        ========================================= */
     const form = document.getElementById('contactForm');
@@ -192,4 +205,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    /* =========================================
+       Splash Screen Logic
+       ========================================= */
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+        // Wait a slight delay for the zoom animation to finish, then fade out
+        setTimeout(() => {
+            splash.classList.add('hidden');
+            // Remove from DOM after transition completes
+            setTimeout(() => {
+                splash.remove();
+            }, 800);
+        }, 1500);
+    }
 });

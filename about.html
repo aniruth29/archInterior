@@ -27,6 +27,7 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            will-change: background-position;
         }
 
         .banner-content h1 {
@@ -139,17 +140,122 @@
             margin: 1.8rem 0;
         }
 
-        /* Mission / Vision hover */
-        .mission-vision-section .factory-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* ══════════════════════════════════════
+           MISSION / VISION STACKED CARDS
+        ══════════════════════════════════════ */
+        .mission-vision-section .mv-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
 
-        .mission-vision-section .factory-card:hover {
+        /* Vision — aligned LEFT, Mission — aligned RIGHT */
+        .stacked-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            padding: 3rem 3.5rem;
+            border-left: 5px solid var(--brand-orange);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 70%;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .stacked-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
         }
 
-        /* Responsive */
+        /* Vision card → left edge */
+        .stacked-card.card-left {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        /* Mission card → right edge */
+        .stacked-card.card-right {
+            margin-left: auto;
+            margin-right: 0;
+            border-left: none;
+            border-right: 5px solid var(--brand-orange);
+            /* flip internal columns so header is on right side */
+            grid-template-columns: 1fr 220px;
+        }
+
+        .stacked-card.card-right .card-header {
+            order: 2;
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        .stacked-card.card-right .card-content {
+            order: 1;
+            text-align: left;
+        }
+
+        /* Decorative background number */
+        .card-bg-number {
+            position: absolute;
+            top: -10px;
+            right: 24px;
+            font-size: 9rem;
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.04);
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .stacked-card.card-right .card-bg-number {
+            right: auto;
+            left: 24px;
+        }
+
+        .card-header {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+
+        .card-header .icon-large {
+            font-size: 3rem;
+            color: var(--brand-orange);
+        }
+
+        .card-header h3 {
+            font-size: 1.9rem;
+            color: var(--text-color);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-content p {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .stacked-card {
+                max-width: 85%;
+            }
+        }
+
         @media (max-width: 900px) {
             .about-page-section .about-grid {
                 grid-template-columns: 1fr;
@@ -162,6 +268,33 @@
 
             .about-page-section .image-wrapper img {
                 height: 320px;
+            }
+
+            .stacked-card,
+            .stacked-card.card-right {
+                max-width: 100%;
+                margin: 0 auto;
+                grid-template-columns: 1fr;
+                border-left: none;
+                border-right: none;
+                border-top: 5px solid var(--brand-orange);
+                padding: 2.2rem 1.8rem;
+                text-align: center;
+            }
+
+            .stacked-card.card-right .card-header {
+                order: 0;
+                text-align: center;
+                align-items: center;
+            }
+
+            .stacked-card.card-right .card-content {
+                order: 1;
+                text-align: center;
+            }
+
+            .card-header {
+                align-items: center;
             }
         }
     </style>
@@ -194,7 +327,7 @@
 
     <main>
         <!-- Page Banner -->
-        <section class="page-banner"
+        <section class="page-banner" id="page-banner"
             style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/modular_interior.webp');">
             <div class="banner-content">
                 <h1>About Us</h1>
@@ -259,29 +392,37 @@
             </div>
         </section>
 
-        <!-- Mission & Vision Section -->
-        <section class="mission-vision-section section-padding" style="background-color: var(--surface-bg);">
+        <!-- ══ Mission & Vision Section ══ -->
+        <section class="mission-vision-section section-padding">
             <div class="section-container">
-                <div class="factory-grid">
-                    <!-- Mission Card -->
-                    <article class="factory-card reveal stagger glass-panel"
-                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
-                        <span class="material-symbols-outlined"
-                            style="font-size: 3rem; color: var(--brand-orange);">rocket_launch</span>
-                        <h3 style="font-size: 2rem; color: var(--text-color);">Our Mission</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.8;">To give a new transformatory touch to every
-                            residential, corporate, commercial, or industrial fabrication.</p>
+                <div class="mv-stack">
+
+                    <!-- Vision Card — slides from LEFT -->
+                    <article class="factory-card stacked-card card-left glass-panel reveal left">
+                        <div class="card-bg-number">01</div>
+                        <div class="card-header">
+                            <span class="material-symbols-outlined icon-large">visibility</span>
+                            <h3>Our Vision</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>To rank in the list of top interior designers by receiving utmost customer satisfaction.
+                                We aim to set new benchmarks in design excellence across every project we undertake.</p>
+                        </div>
                     </article>
 
-                    <!-- Vision Card -->
-                    <article class="factory-card reveal stagger delay-1 glass-panel"
-                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
-                        <span class="material-symbols-outlined"
-                            style="font-size: 3rem; color: var(--brand-orange);">visibility</span>
-                        <h3 style="font-size: 2rem; color: var(--text-color);">Our Vision</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.8;">To rank in the list of top interior designers by
-                            receiving utmost customer satisfaction.</p>
+                    <!-- Mission Card — slides from RIGHT -->
+                    <article class="factory-card stacked-card card-right glass-panel reveal right">
+                        <div class="card-bg-number">02</div>
+                        <div class="card-header">
+                            <span class="material-symbols-outlined icon-large">rocket_launch</span>
+                            <h3>Our Mission</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>To give a new transformatory touch to every residential, corporate, commercial, or
+                                industrial fabrication — blending function with beauty at every step of the process.</p>
+                        </div>
                     </article>
+
                 </div>
             </div>
         </section>
@@ -326,8 +467,20 @@
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- Site JS -->
     <script src="script.js?v=2"></script>
+
+    <!-- Parallax for banner -->
+    <script>
+        (function () {
+            const banner = document.getElementById('page-banner');
+            if (!banner) return;
+            window.addEventListener('scroll', function () {
+                const offset = window.pageYOffset;
+                banner.style.backgroundPositionY = (offset * 0.3) + 'px';
+            }, { passive: true });
+        })();
+    </script>
 </body>
 
 </html>
