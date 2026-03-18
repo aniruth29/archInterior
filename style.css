@@ -963,21 +963,24 @@ img {
 }
 
 .social-links a {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: transparent;
+    border: 2px solid var(--brand-orange);
+    color: var(--brand-orange);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition-smooth);
+    font-size: 0.95rem;
 }
 
 .social-links a:hover {
-    background: var(--accent-color);
+    background: var(--brand-orange);
     color: #ffffff;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(228, 113, 68, 0.35);
 }
 
 .footer-links h4 {

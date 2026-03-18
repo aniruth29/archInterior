@@ -18,7 +18,7 @@
     <style>
         /* ── Page Banner ── */
         .page-banner {
-            min-height: 60vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,7 +86,7 @@
         }
 
         /* ═══════════════════════════════════════
-           FACILITY UNITS — centered video layout
+           FACILITY UNITS
            ═══════════════════════════════════════ */
         .facilities-section {
             padding: 80px 5%;
@@ -102,13 +102,12 @@
             margin-bottom: 0;
         }
 
-        /* Heading above video */
         .facility-heading {
             text-align: center;
             margin-bottom: 28px;
         }
 
-        .facility-heading .facility-tag {
+        .facility-tag {
             display: inline-block;
             background: var(--brand-orange);
             color: #fff;
@@ -163,6 +162,11 @@
             height: 480px;
             object-fit: cover;
             display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .facility-video-wrap:hover video {
+            transform: scale(1.02);
         }
 
         .facility-video-wrap .video-controls {
@@ -200,42 +204,34 @@
             margin-bottom: 0;
         }
 
-        /* Divider between units */
-        .facility-divider {
-            width: 60px;
-            height: 2px;
-            background: rgba(0, 0, 0, 0.08);
-            margin: 0 auto 90px;
-            border-radius: 2px;
-            display: none;
-        }
-
         /* ═══════════════════════════════════════
-           MACHINES — full-width horizontal cards
+           MACHINES — alternating card + image
            ═══════════════════════════════════════ */
         .machines-section {
             background: var(--bg-secondary);
             padding: 80px 5%;
         }
 
-        .machine-card {
+        /* Each row: info left, image right (or reversed) */
+        .machine-row {
             display: grid;
-            grid-template-columns: 120px 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 0;
             background: #fff;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
 
-        .machine-card:last-child {
+        .machine-row:last-child {
             margin-bottom: 0;
         }
 
-        .machine-card::after {
+        .machine-row::after {
             content: '';
             position: absolute;
             top: 0;
@@ -248,83 +244,116 @@
             transition: transform 0.35s ease;
         }
 
-        .machine-card:hover::after {
+        .machine-row:hover::after {
             transform: scaleX(1);
         }
 
-        .machine-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-            border-color: rgba(228, 113, 68, 0.2);
+        .machine-row:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
-        /* Left number column */
-        .machine-number-col {
-            background: rgba(228, 113, 68, 0.06);
+        /* Info side */
+        .machine-info-side {
+            padding: 40px 44px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 24px 16px;
-            border-right: 1px solid rgba(228, 113, 68, 0.1);
-            transition: background 0.3s ease;
-        }
-
-        .machine-card:hover .machine-number-col {
-            background: rgba(228, 113, 68, 0.12);
+            gap: 16px;
         }
 
         .machine-number {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            color: rgba(228, 113, 68, 0.25);
+            color: rgba(228, 113, 68, 0.15);
             line-height: 1;
             transition: color 0.3s ease;
         }
 
-        .machine-card:hover .machine-number {
-            color: rgba(228, 113, 68, 0.7);
+        .machine-row:hover .machine-number {
+            color: rgba(228, 113, 68, 0.55);
         }
 
-        /* Right content column */
-        .machine-content {
-            padding: 24px 32px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .machine-text {
-            flex: 1;
-        }
-
-        .machine-text h4 {
-            font-size: 1.15rem;
+        .machine-info-side h4 {
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 10px;
             line-height: 1.3;
+            margin: 0;
         }
 
-        .machine-desc {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px 24px;
+        .machine-info-side .machine-points {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .machine-desc p {
+        .machine-info-side .machine-points p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             line-height: 1.7;
+            padding-left: 16px;
             position: relative;
-            padding-left: 14px;
         }
 
-        .machine-desc p::before {
-            content: '•';
+        .machine-info-side .machine-points p::before {
+            content: '→';
             position: absolute;
             left: 0;
             color: var(--brand-orange);
             font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* Image side */
+        .machine-img-side {
+            position: relative;
+            overflow: hidden;
+            background: #e8e0d8;
+            height: 320px;
+        }
+
+        .machine-img-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .machine-row:hover .machine-img-side img {
+            transform: scale(1.05);
+        }
+
+        /* Image placeholder when no image */
+        .machine-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(228, 113, 68, 0.08) 0%, rgba(228, 113, 68, 0.03) 100%);
+            min-height: 280px;
+        }
+
+        .machine-img-placeholder .material-symbols-outlined {
+            font-size: 48px;
+            color: rgba(228, 113, 68, 0.3);
+        }
+
+        .machine-img-placeholder span.placeholder-text {
+            font-size: 0.85rem;
+            color: rgba(228, 113, 68, 0.4);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Reversed: image left, info right */
+        .machine-row.reverse .machine-img-side {
+            order: -1;
         }
 
         /* ── Responsive ── */
@@ -333,21 +362,20 @@
                 height: 320px;
             }
 
-            .machine-card {
-                grid-template-columns: 80px 1fr;
-            }
-
-            .machine-content {
-                padding: 20px 24px;
-                gap: 0;
-            }
-
-            .machine-desc {
+            .machine-row {
                 grid-template-columns: 1fr;
             }
 
-            .machine-number {
-                font-size: 2rem;
+            .machine-row.reverse .machine-img-side {
+                order: 0;
+            }
+
+            .machine-img-side {
+                min-height: 220px;
+            }
+
+            .machine-info-side {
+                padding: 28px 28px;
             }
         }
 
@@ -360,16 +388,8 @@
                 padding: 24px 20px;
             }
 
-            .machine-card {
-                grid-template-columns: 64px 1fr;
-            }
-
-            .machine-content {
-                padding: 16px 18px;
-            }
-
             .machine-number {
-                font-size: 1.6rem;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -440,7 +460,6 @@
                             </span>
                         </div>
                     </div>
-
                     <div class="facility-video-wrap">
                         <video autoplay muted loop playsinline poster="images/aluminium_factory.webp"
                             class="factory-video">
@@ -483,7 +502,6 @@
                             </span>
                         </div>
                     </div>
-
                     <div class="facility-video-wrap">
                         <video autoplay muted loop playsinline poster="images/wooden_factory.webp"
                             class="factory-video">
@@ -501,16 +519,14 @@
                             </button>
                         </div>
                     </div>
-
                     <div class="facility-info">
                         <p>Our wood processing unit in Pothur, Chennai, is dedicated to manufacturing high-quality
-                            modular and customized interior components. The facility is equipped with modern panel
-                            processing and finishing machinery to deliver precise cutting, seamless edge finishing,
-                            and durable laminate bonding.</p>
-                        <p>With in-house production capabilities and strict quality control, we ensure accurate
-                            execution, faster turnaround time, and superior finishing standards. This integrated setup
-                            allows us to maintain consistent quality, optimized production efficiency, and timely
-                            delivery for all interior projects.</p>
+                            modular and customized interior components. Equipped with modern panel processing and
+                            finishing machinery for precise cutting, seamless edge finishing, and durable laminate
+                            bonding.</p>
+                        <p>With strict quality control and in-house production, we ensure accurate execution, faster
+                            turnaround time, and superior finishing standards — maintaining consistent quality and
+                            timely delivery for all interior projects.</p>
                     </div>
                 </div>
 
@@ -529,117 +545,145 @@
                     </div>
                 </div>
 
-                <!-- Machine 01 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 01 — info left, image right -->
+                <div class="machine-row reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">01</div>
+                        <h4>Mitre Saw Machine</h4>
+                        <div class="machine-points">
+                            <p>Used for precise angular cutting of aluminium and wood profiles.</p>
+                            <p>Ensures accurate joints and clean finishes for frames, partitions, and structural
+                                elements.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Mitre Saw Machine</h4>
-                            <div class="machine-desc">
-                                <p>Used for precise angular cutting of aluminium and wood profiles.</p>
-                                <p>Ensures accurate joints and clean finishes for frames, partitions, and structural
-                                    elements.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/DOUBLEHEAD CUTTING MACHINE.jpg" alt="Mitre Saw Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Mitre Saw</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 02 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 02 — image left, info right -->
+                <div class="machine-row reverse reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">02</div>
+                        <h4>Double Head Cutting Machine</h4>
+                        <div class="machine-points">
+                            <p>Simultaneous cutting from both ends with high precision, supporting up to 120mm profile
+                                cutting at various angles.</p>
+                            <p>Ideal for bulk production ensuring uniform measurements, clean finishes, and improved
+                                productivity.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Double Head Cutting Machine</h4>
-                            <div class="machine-desc">
-                                <p>Designed for simultaneous cutting from both ends with high precision, supporting up
-                                    to 120mm profile cutting at various angles.</p>
-                                <p>Ideal for bulk production, ensuring uniform measurements, clean finishes, and
-                                    improved productivity.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/IMG_0133.webp" alt="Double Head Cutting Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Double Head Cutter</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 03 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 03 — info left, image right -->
+                <div class="machine-row reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">03</div>
+                        <h4>Automatic End Milling Machine</h4>
+                        <div class="machine-points">
+                            <p>Used to mill and shape profile ends for seamless frame assembly.</p>
+                            <p>Delivers accurate finishing for aluminium sections with consistent quality.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Automatic End Milling Machine</h4>
-                            <div class="machine-desc">
-                                <p>Used to mill and shape profile ends for seamless frame assembly.</p>
-                                <p>Delivers accurate finishing for aluminium sections with consistent quality.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/EDGE BANDING MACHINE.jpg" alt="Automatic End Milling Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">End Milling</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 04 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 04 — image left, info right -->
+                <div class="machine-row reverse reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">04</div>
+                        <h4>Pasting and Cold Pressing Machine</h4>
+                        <div class="machine-points">
+                            <p>Ensures strong bonding of laminates and veneers to panels.</p>
+                            <p>Provides uniform pressure for smooth surfaces and long-lasting durability.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Pasting and Cold Pressing Machine</h4>
-                            <div class="machine-desc">
-                                <p>Ensures strong bonding of laminates and veneers to panels.</p>
-                                <p>Provides uniform pressure for smooth surfaces and long-lasting durability.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/factory.jpg" alt="Pasting and Cold Pressing Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Cold Press</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 05 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 05 — info left, image right -->
+                <div class="machine-row reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">05</div>
+                        <h4>Cutting and Panel Saw Machine</h4>
+                        <div class="machine-points">
+                            <p>High-precision machine for cutting plywood, MDF, and panels to exact sizes.</p>
+                            <p>Enables clean edges and optimized material usage for large-scale projects.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Cutting and Panel Saw Machine</h4>
-                            <div class="machine-desc">
-                                <p>High-precision machine for cutting plywood, MDF, and panels to exact sizes.</p>
-                                <p>Enables clean edges and optimized material usage for large-scale projects.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/IMG_0140.webp" alt="Cutting and Panel Saw Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Panel Saw</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 06 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 06 — image left, info right -->
+                <div class="machine-row reverse reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">06</div>
+                        <h4>Automatic Edge Banding Machine</h4>
+                        <div class="machine-points">
+                            <p>Applies edge tapes to panels for a refined and seamless finish.</p>
+                            <p>Enhances durability, aesthetics, and moisture resistance of furniture components.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Automatic Edge Banding Machine</h4>
-                            <div class="machine-desc">
-                                <p>Applies edge tapes to panels for a refined and seamless finish.</p>
-                                <p>Enhances durability, aesthetics, and moisture resistance of furniture components.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/IMG_0134.webp" alt="Automatic Edge Banding Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Edge Banding</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Machine 07 -->
-                <div class="machine-card reveal">
-                    <div class="machine-number-col">
+                <!-- 07 — info left, image right -->
+                <div class="machine-row reveal">
+                    <div class="machine-info-side">
                         <div class="machine-number">07</div>
+                        <h4>Automatic Plate Slotting Machine</h4>
+                        <div class="machine-points">
+                            <p>Used for accurate groove and slot creation in panels and boards.</p>
+                            <p>Improves joint strength and ensures precise assembly during installation.</p>
+                        </div>
                     </div>
-                    <div class="machine-content">
-                        <div class="machine-text">
-                            <h4>Automatic Plate Slotting Machine</h4>
-                            <div class="machine-desc">
-                                <p>Used for accurate groove and slot creation in panels and boards.</p>
-                                <p>Improves joint strength and ensures precise assembly during installation.</p>
-                            </div>
+                    <div class="machine-img-side">
+                        <img src="images/wooden_factory/IMG_0133.webp" alt="Automatic Plate Slotting Machine"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="machine-img-placeholder" style="display:none;">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="placeholder-text">Plate Slotting</span>
                         </div>
                     </div>
                 </div>
