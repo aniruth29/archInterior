@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -55,7 +55,7 @@
             style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/modular_interior.webp');">
             <div class="banner-content">
                 <h1>Residential Projects</h1>
-                <p>Spaces designed for the way you live Ã¢â‚¬â€ elegant, functional, and personal.</p>
+                <p>Spaces designed for the way you live — elegant, functional, and personal.</p>
             </div>
         </section>
 
@@ -80,7 +80,7 @@
                 <!-- Residential Projects Content -->
                 <div id="projectsContent">
 
-                    <!-- Project 1 Ã¢â‚¬â€ Mr. Avinash Kellys -->
+                    <!-- Project 1 — Mr. Avinash Kellys -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
                             <video autoplay muted loop playsinline
@@ -156,12 +156,12 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 Ã¢â‚¬â€ Mr. Nagaraj -->
+                    <!-- Project 2 — Mr. Nagaraj -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
                             <div class="video-placeholder">
                                 <span class="material-symbols-outlined">play_circle</span>
-                                <span class="ph-text">Project Video Ã¢â‚¬â€ Coming Soon</span>
+                                <span class="ph-text">Project Video — Coming Soon</span>
                             </div>
                         </div>
                         <div class="project-body">
@@ -181,7 +181,7 @@
                                     spatial depth. Tailor-made wardrobes, crockery units, and a fully equipped modular
                                     kitchen ensure functionality with finesse. Rich wall paneling, curated wallpapers,
                                     and bespoke furniture elements bring warmth and character, while a dedicated puja
-                                    room adds a sense of calm Ã¢â‚¬â€ creating a cohesive, sophisticated home tailored for
+                                    room adds a sense of calm — creating a cohesive, sophisticated home tailored for
                                     contemporary living.</p>
                             </div>
                         </div>
@@ -289,7 +289,7 @@
     <script src="js/lazy_loader.js"></script>
 
     <script>
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Show/Hide Others Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Show/Hide Others 
         function showOthers() {
             const projects = document.getElementById('projectsContent');
             const others = document.getElementById('othersContent');
@@ -327,7 +327,7 @@
             }, 50);
         }
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Lightbox Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Lightbox 
         let lbImages = [], lbIndex = 0;
         const lb = document.createElement('div');
         lb.id = 'unifiedLightbox';
@@ -370,7 +370,7 @@
             if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; updateLb(); }
         });
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Attach lightbox to in-page project image rows Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Attach lightbox to in-page project image rows ──
         document.querySelectorAll('.project-images').forEach(grid => {
             const imgs = Array.from(grid.querySelectorAll('.project-img-item img'));
             const imgList = imgs.map(img => ({ src: img.src, alt: img.alt }));
@@ -380,7 +380,7 @@
             });
         });
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Build Others grid: one card per residential folder Ã¢â€â‚¬Ã¢â€â‚¬
+        // ── Build Others grid: one card per residential folder 
         (function buildOthers() {
             const grid = document.getElementById('othersGrid');
             if (!grid || typeof portfolioData === 'undefined') return;

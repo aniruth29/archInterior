@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -80,7 +80,7 @@
                 <!-- Commercial Projects Content -->
                 <div id="projectsContent">
 
-                    <!-- Project 1 Ã¢â‚¬â€ JB Khanna Prints -->
+                    <!-- Project 1 — JB Khanna Prints -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
                             <video autoplay muted loop playsinline
@@ -159,7 +159,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 Ã¢â‚¬â€ TVS Brakes India -->
+                    <!-- Project 2 — TVS Brakes India -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
                             <video autoplay muted loop playsinline
@@ -308,7 +308,7 @@
     <script src="js/lazy_loader.js"></script>
 
     <script>
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Show/Hide Others Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Show/Hide Others 
         function showOthers() {
             const projects = document.getElementById('projectsContent');
             const others = document.getElementById('othersContent');
@@ -347,7 +347,7 @@
             }, 50);
         }
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Unified Lightbox Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Unified Lightbox 
         let lbImages = [];
         let lbIndex = 0;
 
@@ -404,7 +404,7 @@
             if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; updateLb(); }
         });
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Attach to project images Ã¢â€â‚¬Ã¢â€â‚¬
+        // ── Attach to project images ──
         document.querySelectorAll('.project-images').forEach(grid => {
             const imgs = Array.from(grid.querySelectorAll('.project-img-item img'));
             const imgList = imgs.map(img => ({ src: img.src, alt: img.alt }));
@@ -414,7 +414,7 @@
             });
         });
 
-        // Ã¢â€â‚¬Ã¢â€â‚¬ Build Others grid: one card per commercial folder Ã¢â€â‚¬Ã¢â€â‚¬
+        //  Build Others grid: one card per commercial folder 
         (function buildOthers() {
             const grid = document.getElementById('othersGrid');
             if (!grid || typeof portfolioData === 'undefined') return;
