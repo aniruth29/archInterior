@@ -17,6 +17,40 @@
         rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Fix address icons ── */
+        .detail-item .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--brand-orange, #e07b39);
+            color: #fff;
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── Form feedback ── */
+        .form-status {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            min-height: 24px;
+            text-align: center;
+        }
+        .form-status.success { color: #2e7d32; }
+        .form-status.error   { color: #c62828; }
+
+        /* ── Submit button loading state ── */
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body class="light-theme">
@@ -62,8 +96,7 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="carousel-container">
-                <div class="carousel-slide active" style="background-image: url('images/modular_interior.webp');">
-                </div>
+                <div class="carousel-slide active" style="background-image: url('images/modular_interior.webp');"></div>
                 <div class="carousel-slide" style="background-image: url('images/modular_kitchen.webp');"></div>
                 <div class="carousel-slide" style="background-image: url('images/modular_bedroom.webp');"></div>
                 <div class="carousel-slide" style="background-image: url('images/wardrobe.webp');"></div>
@@ -71,12 +104,8 @@
             </div>
 
             <div class="hero-content">
-                <h1 class="animate-up hero-title text-primary">CREATING LASTING IMPRESSIONS<br>THROUGH INTERIOR DESIGN
-                </h1>
+                <h1 class="animate-up hero-title text-primary">CREATING LASTING IMPRESSIONS<br>THROUGH INTERIOR DESIGN</h1>
                 <p class="animate-up delay-1">Premium residential and commercial spaces tailored to your vision.</p>
-                <!-- <div class="hero-buttons animate-up delay-2">
-                    <a href="projects.html" class="btn btn-primary">View Projects</a>
-                </div> -->
             </div>
 
             <!-- Carousel Controls -->
@@ -90,7 +119,9 @@
             </div>
         </section>
 
-        <!-- What We Offer Section -->
+        <!-- ═══════════════════════════════════════
+             What We Offer Section
+        ═══════════════════════════════════════ -->
         <section class="offer-section section-padding" id="offerings" style="background-color: var(--bg-main);">
             <div class="section-container">
                 <div class="gallery-header reveal">
@@ -98,105 +129,109 @@
                 </div>
 
                 <div class="offer-grid reveal">
-                    <!-- Residential Column -->
+
+                    <!-- ── Residential Column ── -->
                     <div class="offer-column">
-                        <a href="projects.html?filter=residential" class="offer-col-link">
+                        <a href="residential.html" class="offer-col-link">
                             <h3 class="offer-category-title">Residential</h3>
                             <div class="offer-main-icon">
                                 <img src="images/home.webp" alt="Residential" loading="lazy"
                                     style="width: 100px; height: auto;">
                             </div>
                         </a>
+
                         <div class="offer-icons-grid">
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">bed</span>
-                                <span>Bedroom</span>
-                            </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
+                            <a href="residential.html" class="offer-icon-item">
                                 <span class="material-symbols-outlined">kitchen</span>
-                                <span>Kitchen</span>
+                                <span>Modular Kitchen</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">bathtub</span>
-                                <span>Bath</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">tv</span>
+                                <span>Entertainment Unit</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">weekend</span>
-                                <span>Living</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">checkroom</span>
+                                <span>Wardrobe</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">curtains</span>
-                                <span>Curtains</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">dining</span>
+                                <span>Crockery Unit</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">lightbulb</span>
-                                <span>Lighting</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">layers</span>
+                                <span>False Ceiling</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">potted_plant</span>
-                                <span>Plants</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">vertical_split</span>
+                                <span>Partition</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">table_restaurant</span>
-                                <span>Dining</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">tv_gen</span>
+                                <span>TV Unit</span>
                             </a>
-                            <a href="projects.html?filter=residential" class="offer-icon-item">
-                                <span class="material-symbols-outlined">balcony</span>
-                                <span>Balcony</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">temple_hindu</span>
+                                <span>Pooja Unit</span>
+                            </a>
+                            <a href="residential.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">menu_book</span>
+                                <span>Study Unit</span>
                             </a>
                         </div>
                     </div>
 
                     <div class="offer-separator"></div>
 
-                    <!-- Commercial Column -->
+                    <!-- ── Commercial Column ── -->
                     <div class="offer-column">
-                        <a href="projects.html?filter=commercial" class="offer-col-link">
+                        <a href="commercial.html" class="offer-col-link">
                             <h3 class="offer-category-title">Commercial</h3>
                             <div class="offer-main-icon">
                                 <img src="images/commerical.webp" alt="Commercial" loading="lazy"
                                     style="width: 100px; height: auto;">
                             </div>
                         </a>
+
                         <div class="offer-icons-grid">
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">storefront</span>
-                                <span>Store</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">window</span>
+                                <span>Aluminium Window</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">chair_alt</span>
-                                <span>Office Chair</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">sensor_door</span>
+                                <span>Glass Partition/Door</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">meeting_room</span>
-                                <span>Cabin</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">door_sliding</span>
+                                <span>Aluminium Partition/Door</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">local_cafe</span>
-                                <span>Cafeteria</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">blinds</span>
+                                <span>UPVC Window</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">curtains</span>
-                                <span>Curtains</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">chair</span>
+                                <span>Modular Furniture</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">lightbulb</span>
-                                <span>Lighting</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">computer</span>
+                                <span>Workstation</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">potted_plant</span>
-                                <span>Plants</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">inventory_2</span>
+                                <span>Storage</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">tv</span>
-                                <span>TV</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">grid_on</span>
+                                <span>Grid Ceiling</span>
                             </a>
-                            <a href="projects.html?filter=commercial" class="offer-icon-item">
-                                <span class="material-symbols-outlined">desk</span>
-                                <span>Desk</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <span class="material-symbols-outlined">campaign</span>
+                                <span>Branding</span>
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -209,7 +244,7 @@
                     <p>Where precision meets craftsmanship</p>
                 </div>
 
-                <!-- Factory Row 1 â€” Video left, Info right -->
+                <!-- Factory Row 1 – Video left, Info right -->
                 <div class="factory-row reveal">
                     <div class="factory-row-video">
                         <video autoplay muted loop playsinline poster="images/aluminium_factory.webp"
@@ -232,11 +267,10 @@
                         <span class="factory-tag">Aluminium</span>
                         <h3>Aluminium Fabrication Unit</h3>
                         <div class="factory-row-meta">
-                            <span><span class="material-symbols-outlined">location_on</span>Thirumulaivoyil,
-                                Ambattur</span>
+                            <span><span class="material-symbols-outlined">location_on</span>Thirumulaivoyil, Ambattur</span>
                             <span><span class="material-symbols-outlined">square_foot</span>2500 sqft</span>
                         </div>
-                        <p>Equipped with advanced cutting and milling machinery for precision aluminium fabrication â€”
+                        <p>Equipped with advanced cutting and milling machinery for precision aluminium fabrication –
                             supporting partitions, glazing systems, doors, windows, and structural elements for
                             residential and commercial interiors.</p>
                         <a href="factory.html" class="factory-row-link">
@@ -245,7 +279,7 @@
                     </div>
                 </div>
 
-                <!-- Factory Row 2 â€” Info left, Video right -->
+                <!-- Factory Row 2 – Info left, Video right -->
                 <div class="factory-row reverse reveal">
                     <div class="factory-row-video">
                         <video autoplay muted loop playsinline poster="images/wooden_factory.webp"
@@ -292,99 +326,103 @@
                 </div>
                 <div class="clients-marquee reveal">
                     <div class="marquee-track">
-                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+1'">
-                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+2'">
-                        <img src="images/century_ply.png" alt="Client 3" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+3'">
-                        <img src="images/indocool.webp" alt="Client 6" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+6'">
-                        <img src="images/km.png" alt="Client 7" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+7'">
-                        <img src="images/opmobility.png" alt="Client 8" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+8'">
-                        <img src="images/rks.webp" alt="Client 9" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+9'">
-                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+10'">
-                        <img src="images/swanag.webp" alt="Client 11" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+11'">
-                        <img src="images/tidc.webp" alt="Client 12" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+12'">
+                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy">
+                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy">
+                        <img src="images/century_ply.png" alt="Client 3" loading="lazy">
+                        <img src="images/indocool.webp" alt="Client 6" loading="lazy">
+                        <img src="images/km.png" alt="Client 7" loading="lazy">
+                        <img src="images/opmobility.png" alt="Client 8" loading="lazy">
+                        <img src="images/rks.webp" alt="Client 9" loading="lazy">
+                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy">
+                        <img src="images/swanag.webp" alt="Client 11" loading="lazy">
+                        <img src="images/tidc.webp" alt="Client 12" loading="lazy">
                         <!-- Duplicated for Infinite Loop -->
-                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+1'">
-                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+2'">
-                        <img src="images/century_ply.png" alt="Client 3" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+3'">
-                        <img src="images/indocool.webp" alt="Client 6" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+6'">
-                        <img src="images/km.png" alt="Client 7" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+7'">
-                        <img src="images/opmobility.png" alt="Client 8" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+8'">
-                        <img src="images/rks.webp" alt="Client 9" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+9'">
-                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+10'">
-                        <img src="images/swanag.webp" alt="Client 11" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+11'">
-                        <img src="images/tidc.webp" alt="Client 12" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/150x80?text=Client+12'">
+                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy">
+                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy">
+                        <img src="images/century_ply.png" alt="Client 3" loading="lazy">
+                        <img src="images/indocool.webp" alt="Client 6" loading="lazy">
+                        <img src="images/km.png" alt="Client 7" loading="lazy">
+                        <img src="images/opmobility.png" alt="Client 8" loading="lazy">
+                        <img src="images/rks.webp" alt="Client 9" loading="lazy">
+                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy">
+                        <img src="images/swanag.webp" alt="Client 11" loading="lazy">
+                        <img src="images/tidc.webp" alt="Client 12" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ═══════════════════════════════════════
+             Contact Section
+        ═══════════════════════════════════════ -->
         <section class="contact-section section-padding" id="contact">
             <div class="section-container contact-grid">
+
+                <!-- Contact Info -->
                 <div class="contact-info reveal left">
                     <h2>Let's Talk</h2>
                     <p>Ready to transform your space? Get in touch with us today for a consultation.</p>
 
                     <div class="contact-details">
+
+                        <!-- Address – fixed icon -->
                         <div class="detail-item">
-                            <span class="icon"></span>
+                            <span class="icon">📍</span>
                             <div>
                                 <h4>Address</h4>
                                 <p>No 122, Nainiammal St,<br>Krishnapuram Ambattur,<br>Chennai - 600053</p>
                             </div>
                         </div>
+
+                        <!-- Phone – fixed icon -->
                         <div class="detail-item">
-                            <span class="icon"></span>
+                            <span class="icon">📞</span>
                             <div>
                                 <h4>Phone</h4>
                                 <p>+91 9003212777, +91 9941584255</p>
                             </div>
                         </div>
+
+                        <!-- Email – fixed icon -->
                         <div class="detail-item">
                             <span class="icon">✉️</span>
                             <div>
                                 <h4>Email</h4>
-                                <p><a href="https://www.archinterior.in"
-                                        target="_blank">www.archinterior.in</a><br>enquiry@archinterior.in</p>
+                                <p>
+                                    <a href="https://www.archinterior.in" target="_blank">www.archinterior.in</a><br>
+                                    enquiry@archinterior.in
+                                </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
+                <!-- Contact Form -->
                 <div class="contact-form-wrapper reveal right">
-                    <form class="glass-form glass-panel" id="contactForm">
+                    <form class="glass-form glass-panel" id="contactForm" novalidate>
+                        <input type="hidden" name="access_key" value="fdde888f-8084-43a9-b6a5-a907f22cffb6">
+                        <input type="hidden" name="subject" value="New Enquiry - Arch Interior Website">
+                        <input type="checkbox" name="botcheck" style="display:none">
+
                         <div class="form-group">
-                            <input type="text" id="name" required placeholder=" " />
+                            <input type="text" id="name" name="name" required placeholder=" " />
                             <label for="name">Your Name</label>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" id="email" required placeholder=" " />
+                            <input type="email" id="email" name="email" required placeholder=" " />
                             <label for="email">Email Address</label>
                         </div>
 
+                        <!-- Phone number field -->
                         <div class="form-group">
-                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <input type="tel" id="phone" name="phone" placeholder=" " />
+                            <label for="phone">Phone Number</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                             <label for="message">Message</label>
                         </div>
 
@@ -392,8 +430,12 @@
                             <span class="btn-text">Send Message</span>
                             <span class="ripple"></span>
                         </button>
+
+                        <!-- Status message shown after submit -->
+                        <p class="form-status" id="formStatus"></p>
                     </form>
                 </div>
+
             </div>
         </section>
     </main>
@@ -440,6 +482,41 @@
     <!-- JS -->
     <script src="js/script.js"></script>
     <script src="js/lazy_loader.js"></script>
-</body>
 
+    <!-- Web3Forms Contact Form Handler -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+        const submitBtn = form.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending…';
+            status.className = 'form-status';
+            status.textContent = '';
+
+            const data = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                status.textContent = '✅ Message sent! We\'ll get back to you soon.';
+                status.className = 'form-status success';
+                form.reset();
+            } else {
+                status.textContent = '❌ Something went wrong. Please try again.';
+                status.className = 'form-status error';
+            }
+
+            submitBtn.disabled = false;
+            btnText.textContent = 'Send Message';
+        });
+    </script>
+
+</body>
 </html>
