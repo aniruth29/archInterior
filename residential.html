@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -72,8 +72,8 @@
                         <div class="title-underline"><span></span><i></i><span></span></div>
                     </div>
                     <button class="others-toggle-btn" id="othersBtn" onclick="showOthers()">
-                        <span class="material-symbols-outlined">photo_library</span>
-                        Others
+                        <span>View Other Projects</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
                     </button>
                 </div>
 
@@ -296,10 +296,11 @@
             const btn = document.getElementById('othersBtn');
             const title = document.getElementById('projectsTitle');
             projects.style.opacity = '0';
-            projects.style.transform = 'translateX(-30px)';
+            projects.style.transform = 'translateX(-100px)';
             title.style.opacity = '0';
             title.style.transform = 'translateY(-10px)';
-            btn.style.display = 'none';
+            btn.style.opacity = '0';
+            setTimeout(() => btn.style.display = 'none', 300);
             setTimeout(() => {
                 projects.style.display = 'none';
                 title.style.display = 'none';
@@ -316,13 +317,14 @@
             others.classList.remove('others-content-visible');
             others.classList.add('others-content-hidden');
             projects.style.display = 'block';
-            title.style.display = 'flex';
+            title.style.display = '';
             btn.style.display = 'inline-flex';
             setTimeout(() => {
                 projects.style.opacity = '1';
                 projects.style.transform = 'translateX(0)';
                 title.style.opacity = '1';
                 title.style.transform = 'translateY(0)';
+                btn.style.opacity = '1';
                 window.scrollTo({ top: document.getElementById('projects').offsetTop - 80, behavior: 'smooth' });
             }, 50);
         }

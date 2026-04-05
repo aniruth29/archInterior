@@ -1919,29 +1919,34 @@ img {
 .others-toggle-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 22px;
+    gap: 12px;
+    padding: 12px 28px;
     background: transparent;
     border: 2px solid var(--brand-orange);
     color: var(--brand-orange);
-    border-radius: 30px;
-    font-size: 0.88rem;
+    border-radius: 40px;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-primary);
     margin-top: 20px;
 }
 
 .others-toggle-btn .material-symbols-outlined {
-    font-size: 17px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
 }
 
 .others-toggle-btn:hover {
     background: var(--brand-orange);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(228, 113, 68, 0.3);
+    box-shadow: 0 10px 25px rgba(228, 113, 68, 0.4);
+}
+
+.others-toggle-btn:hover .material-symbols-outlined {
+    transform: translateX(4px);
 }
 
 /* ── Projects / Others transition ── */
@@ -1962,7 +1967,7 @@ img {
 @keyframes fadeSlideIn {
     from {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(100px);
     }
 
     to {
