@@ -56,7 +56,7 @@
     <main>
         <!-- Page Banner -->
         <section class="page-banner" id="page-banner"
-            style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/modular_interior.webp');">
+            style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%), url('images/modular_interior.webp');">
             <div class="banner-content">
                 <h1>About Us</h1>
                 <p>Creating lasting impressions through exceptional interior design and unparalleled craftsmanship.</p>
@@ -212,18 +212,7 @@
     <!-- Site JS -->
     <script src="js/script.js?v=2"></script>
     <script src="js/lazy_loader.js"></script>
-
-    <!-- Parallax for banner -->
-    <script>
-        (function () {
-            const banner = document.getElementById('page-banner');
-            if (!banner) return;
-            window.addEventListener('scroll', function () {
-                const offset = window.pageYOffset;
-                banner.style.backgroundPositionY = (offset * 0.3) + 'px';
-            }, { passive: true });
-        })();
-    </script>
+    
 </body>
 
 </html>

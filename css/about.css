@@ -1594,9 +1594,9 @@ img {
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-attachment: scroll;
     text-align: center;
-    will-change: background-position;
 }
 
 .banner-content h1 {

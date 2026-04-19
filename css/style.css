@@ -923,15 +923,26 @@ img {
 }
 
 .detail-item .icon {
-    font-size: 1.8rem;
-    background: var(--glass-bg);
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--brand-orange);
+    color: var(--brand-orange);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    border: 1px solid var(--glass-border);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.detail-item:hover .icon {
+    background: var(--brand-orange);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(228, 113, 68, 0.35);
 }
 
 .detail-item h4 {
