@@ -1921,3 +1921,175 @@ img {
     transform: scale(1.15);
     color: var(--brand-orange, #e07b39);
 }
+
+/* ════════════════════════════════════════════
+   OUR WORK — Premium Marquee Gallery
+════════════════════════════════════════════ */
+
+.gallery-marquee-section {
+    padding: 90px 0;
+    background-color: var(--bg-main);
+    position: relative;
+}
+
+.gallery-marquee-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-marquee-section .section-header h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 18px;
+}
+
+.gallery-marquee-section .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--brand-orange, #e07b39);
+    border-radius: 2px;
+}
+
+.gallery-marquee-section .section-header p {
+    margin-top: 14px;
+    font-size: 1rem;
+    color: var(--text-muted, #888);
+    letter-spacing: 0.5px;
+}
+
+/* ── Marquee Wrapper — clips scroll but NOT row overflow ── */
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px 0;        /* vertical room so border glow isn't clipped */
+}
+
+/* Soft edge fade — left & right */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-main, #fff) 10%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-main, #fff) 10%, transparent 100%);
+}
+
+/* ── Each row — visible so hover effect isn't clipped ── */
+.marquee-row {
+    overflow: visible;
+    width: 100%;
+}
+
+.marquee-inner {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    will-change: transform;
+    padding: 4px 0;         /* tiny vertical buffer inside the track */
+}
+
+/* ── Images — base state slightly dimmed ── */
+.marquee-inner img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+    flex-shrink: 0;
+    display: block;
+    cursor: pointer;
+
+    filter: brightness(0.92) saturate(0.95);
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.06);
+
+    transition:
+        filter 0.4s ease,
+        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-radius 0.3s ease;
+}
+
+/* ── Hover — brighten + orange ring glow, zero transform ── */
+.marquee-inner img:hover {
+    filter: brightness(1.08) saturate(1.1);
+    border-radius: 18px;
+    box-shadow:
+        0 0 0 3px var(--brand-orange, #e07b39),
+        0 12px 36px rgba(224, 123, 57, 0.30),
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Pause animation on row hover ── */
+.marquee-row:hover .marquee-inner {
+    animation-play-state: paused;
+}
+
+/* ── Animations ── */
+.marquee-left .marquee-inner {
+    animation: marqueeLeft 35s linear infinite;
+}
+
+.marquee-right .marquee-inner {
+    animation: marqueeRight 35s linear infinite;
+}
+
+@keyframes marqueeLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .marquee-inner img {
+        width: 200px;
+        height: 200px;
+    }
+    .marquee-wrapper::before,
+    .marquee-wrapper::after {
+        width: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .marquee-inner img {
+        width: 160px;
+        height: 160px;
+        border-radius: 10px;
+    }
+    .marquee-inner {
+        gap: 12px;
+    }
+    .marquee-wrapper {
+        gap: 12px;
+    }
+    .gallery-marquee-section {
+        padding: 60px 0;
+    }
+}
