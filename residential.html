@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -63,7 +63,7 @@
         <section class="projects-section" id="projects">
             <div class="section-container">
 
-                <!-- Title Row with Others button -->
+                <!-- Title Row -->
                 <div class="projects-title-row" id="projectsTitle">
                     <div class="projects-page-title reveal">
                         <span class="section-tag">Residential</span>
@@ -71,10 +71,6 @@
                         <p>Every home tells a story. Here are the ones we helped craft.</p>
                         <div class="title-underline"><span></span><i></i><span></span></div>
                     </div>
-                    <button class="others-toggle-btn" id="othersBtn" onclick="showOthers()">
-                        <span class="material-symbols-outlined">photo_library</span>
-                        Others
-                    </button>
                 </div>
 
                 <!-- Residential Projects Content -->
@@ -83,22 +79,13 @@
                     <!-- Project 1 — Mr. Avinash Kellys -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
-                            <video autoplay muted loop playsinline
-                                poster="images/project_page/Residential Project/Avinash/1_avi.jpeg"
-                                class="factory-video lazy-video">
-                                <source data-src="images/videos/Out.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-controls">
-                                <button class="v-control-btn play-pause" aria-label="Play/Pause">
-                                    <span class="material-symbols-outlined">pause</span>
-                                </button>
-                                <button class="v-control-btn mute-toggle" aria-label="Mute/Unmute">
-                                    <span class="material-symbols-outlined">volume_off</span>
-                                </button>
-                                <button class="v-control-btn fullscreen-btn" aria-label="Fullscreen">
-                                    <span class="material-symbols-outlined">fullscreen</span>
-                                </button>
-                            </div>
+                            <iframe width="100%" height="460"
+                                src="https://www.youtube.com/embed/dnktHAcNmq0?autoplay=1&mute=1&loop=1&playlist=dnktHAcNmq0&controls=1&rel=0&modestbranding=1&origin=https://archinterior.in"
+                                title="Mr. Avinash Kellys Residence Video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen style="width: 100%; height: 460px; display: block; border: none;">
+                            </iframe>
                         </div>
                         <div class="project-body">
                             <div class="project-info">
@@ -159,10 +146,13 @@
                     <!-- Project 2 — Mr. Nagaraj -->
                     <div class="project-card reveal">
                         <div class="project-video-wrap">
-                            <div class="video-placeholder">
-                                <span class="material-symbols-outlined">play_circle</span>
-                                <span class="ph-text">Project Video — Coming Soon</span>
-                            </div>
+                            <iframe width="100%" height="460"
+                                src="https://www.youtube.com/embed/ygNY0eiRH6A?autoplay=1&mute=1&loop=1&playlist=ygNY0eiRH6A&controls=1&rel=0&modestbranding=1&origin=https://archinterior.in"
+                                title="Mr. Nagaraj Apartment Video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen style="width: 100%; height: 460px; display: block; border: none;">
+                            </iframe>
                         </div>
                         <div class="project-body">
                             <div class="project-info">
@@ -221,6 +211,13 @@
                         </div>
                     </div>
 
+                    <div style="display: flex; justify-content: center; margin-top: 50px; padding-bottom: 40px;">
+                        <button class="others-toggle-btn" id="othersBtn" onclick="showOthers()">
+                            <span>View Other Projects</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+
                 </div><!-- end projectsContent -->
 
                 <!-- Others Section -->
@@ -255,8 +252,8 @@
                 <p>Creating lasting impressions through exceptional interior design and unparalleled craftsmanship.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/archinterior_in" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@archinteriormedia" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -296,10 +293,11 @@
             const btn = document.getElementById('othersBtn');
             const title = document.getElementById('projectsTitle');
             projects.style.opacity = '0';
-            projects.style.transform = 'translateX(-30px)';
+            projects.style.transform = 'translateX(-100px)';
             title.style.opacity = '0';
             title.style.transform = 'translateY(-10px)';
-            btn.style.display = 'none';
+            btn.style.opacity = '0';
+            setTimeout(() => btn.style.display = 'none', 300);
             setTimeout(() => {
                 projects.style.display = 'none';
                 title.style.display = 'none';
@@ -316,13 +314,14 @@
             others.classList.remove('others-content-visible');
             others.classList.add('others-content-hidden');
             projects.style.display = 'block';
-            title.style.display = 'flex';
+            title.style.display = '';
             btn.style.display = 'inline-flex';
             setTimeout(() => {
                 projects.style.opacity = '1';
                 projects.style.transform = 'translateX(0)';
                 title.style.opacity = '1';
                 title.style.transform = 'translateY(0)';
+                btn.style.opacity = '1';
                 window.scrollTo({ top: document.getElementById('projects').offsetTop - 80, behavior: 'smooth' });
             }, 50);
         }

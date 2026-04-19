@@ -180,7 +180,7 @@ img {
 }
 
 .logo img {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
@@ -1231,6 +1231,11 @@ img {
 /* ── Dropdown ── */
 .nav-dropdown {
     position: relative;
+}
+
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Arrow */
