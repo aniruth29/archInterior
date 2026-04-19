@@ -183,7 +183,7 @@ img {
 }
 
 .logo img {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
@@ -1236,6 +1236,11 @@ img {
     position: relative;
 }
 
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+}
+
 /* Arrow */
 .dropdown-arrow {
     font-size: 0.65rem;
@@ -1617,7 +1622,7 @@ img {
 /* ── Section title ── */
 .projects-page-title {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 25px;
 }
 
 .projects-page-title .section-tag {
@@ -1934,15 +1939,14 @@ img {
     position: relative;
     margin-bottom: 60px;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .projects-title-row .others-toggle-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
+    margin-top: 15px;
 }
 
 /* ── Projects / Others transition ── */

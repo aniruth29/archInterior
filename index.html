@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,13 +42,100 @@
             min-height: 24px;
             text-align: center;
         }
-        .form-status.success { color: #2e7d32; }
-        .form-status.error   { color: #c62828; }
+
+        .form-status.success {
+            color: #2e7d32;
+        }
+
+        .form-status.error {
+            color: #c62828;
+        }
 
         /* ── Submit button loading state ── */
         .submit-btn:disabled {
             opacity: 0.7;
             cursor: not-allowed;
+        }
+
+        /* ── Custom Offer Icons ── */
+        .offer-custom-icon {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .offer-icon-item:hover .offer-custom-icon {
+            transform: scale(1.15) translateY(-4px);
+            filter: drop-shadow(0 6px 10px rgba(224, 123, 57, 0.45));
+        }
+
+        .offer-icon-item span {
+            color: var(--brand-orange, #e07b39);
+            transition: color 0.3s ease;
+        }
+        
+        .offer-icon-item:hover span {
+            color: #c96527; /* slightly darker orange on hover */
+        }
+
+        /* ── Clients Static Grid ── */
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px 30px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .client-logo-item {
+            flex: 0 0 calc(25% - 30px);
+            display: flex;
+            justify-content: center;
+            min-width: 150px;
+        }
+
+        .client-logo-item img {
+            max-width: 220px;
+            max-height: 110px;
+            width: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo-item.wide-logo img {
+            max-width: 320px;
+            max-height: 150px;
+            transform: scale(1.3);
+        }
+
+        .client-logo-item.wide-logo:hover img {
+            transform: scale(1.4);
+        }
+
+        .client-logo-item:hover img {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 900px) {
+            .client-logo-item {
+                flex: 0 0 calc(33.333% - 30px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .client-logo-item {
+                flex: 0 0 calc(33.333% - 30px);
+            }
+        }
+        @media (max-width: 480px) {
+            .client-logo-item {
+                flex: 0 0 calc(50% - 30px);
+            }
         }
     </style>
 </head>
@@ -104,7 +191,8 @@
             </div>
 
             <div class="hero-content">
-                <h1 class="animate-up hero-title text-primary">CREATING LASTING IMPRESSIONS<br>THROUGH INTERIOR DESIGN</h1>
+                <h1 class="animate-up hero-title text-primary">CREATING LASTING IMPRESSIONS<br>THROUGH INTERIOR DESIGN
+                </h1>
                 <p class="animate-up delay-1">Premium residential and commercial spaces tailored to your vision.</p>
             </div>
 
@@ -130,111 +218,114 @@
 
                 <div class="offer-grid reveal">
 
-                    <!-- ── Residential Column ── -->
+                    <!-- ── Commercial Column ── -->
                     <div class="offer-column">
-                        <a href="residential.html" class="offer-col-link">
-                            <h3 class="offer-category-title">Residential</h3>
+                        <a href="commercial.html" class="offer-col-link">
+                            <h3 class="offer-category-title">Commercial</h3>
                             <div class="offer-main-icon">
-                                <img src="images/home.webp" alt="Residential" loading="lazy"
-                                    style="width: 100px; height: auto;">
+                                <img src="images/commerical.webp" alt="Commercial" loading="lazy" style="width: 100px; height: auto;">
                             </div>
                         </a>
 
                         <div class="offer-icons-grid">
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">kitchen</span>
-                                <span>Modular Kitchen</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/glass-building.png" alt="Elevation Glazing" class="offer-custom-icon">
+                                <span>Elevation Glazing</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">tv</span>
-                                <span>Entertainment Unit</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/window (1).png" alt="UPVC Windows and Doors" class="offer-custom-icon">
+                                <span>UPVC Windows and Doors</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">checkroom</span>
-                                <span>Wardrobe</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/doors.png" alt="Aluminium Doors and Partitions" class="offer-custom-icon">
+                                <span>Aluminium Doors<br>and Partitions</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">dining</span>
-                                <span>Crockery Unit</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/window.png" alt="Aluminium Windows" class="offer-custom-icon">
+                                <span>Aluminium Windows</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">layers</span>
-                                <span>False Ceiling</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/sliding-door.png" alt="Glass Doors and Partitions" class="offer-custom-icon">
+                                <span>Glass Doors<br>and Partitions</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">vertical_split</span>
-                                <span>Partition</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/floor.png" alt="Flooring" class="offer-custom-icon">
+                                <span>Flooring</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">tv_gen</span>
-                                <span>TV Unit</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/furniture.png" alt="Modular Furniture" class="offer-custom-icon">
+                                <span>Modular Furniture</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">temple_hindu</span>
-                                <span>Pooja Unit</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/workplace.png" alt="Workstations" class="offer-custom-icon">
+                                <span>Workstations</span>
                             </a>
-                            <a href="residential.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">menu_book</span>
-                                <span>Study Unit</span>
+                            <a href="commercial.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/paint-roller.png" alt="Painting" class="offer-custom-icon">
+                                <span>Painting</span>
                             </a>
                         </div>
                     </div>
 
                     <div class="offer-separator"></div>
 
-                    <!-- ── Commercial Column ── -->
+                    <!-- ── Residential Column ── -->
                     <div class="offer-column">
-                        <a href="commercial.html" class="offer-col-link">
-                            <h3 class="offer-category-title">Commercial</h3>
+                        <a href="residential.html" class="offer-col-link">
+                            <h3 class="offer-category-title">Residential</h3>
                             <div class="offer-main-icon">
-                                <img src="images/commerical.webp" alt="Commercial" loading="lazy"
-                                    style="width: 100px; height: auto;">
+                                <img src="images/home.webp" alt="Residential" loading="lazy" style="width: 100px; height: auto;">
                             </div>
                         </a>
 
                         <div class="offer-icons-grid">
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">window</span>
-                                <span>Aluminium Window</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/kitchen.png" alt="Modular Kitchen" class="offer-custom-icon">
+                                <span>Modular Kitchen</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">sensor_door</span>
-                                <span>Glass Partition/Door</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/tv-table.png" alt="Entertainment Unit" class="offer-custom-icon">
+                                <span>Entertainment Unit</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">door_sliding</span>
-                                <span>Aluminium Partition/Door</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/wardrobe.png" alt="Wardrobe" class="offer-custom-icon">
+                                <span>Wardrobe</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">blinds</span>
-                                <span>UPVC Window</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/plates.png" alt="Crockery Unit" class="offer-custom-icon">
+                                <span>Crockery Unit</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">chair</span>
-                                <span>Modular Furniture</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/ceiling.png" alt="False Ceiling" class="offer-custom-icon">
+                                <span>False Ceiling</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">computer</span>
-                                <span>Workstation</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/room-divider.png" alt="Partition" class="offer-custom-icon">
+                                <span>Partition</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">inventory_2</span>
-                                <span>Storage</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/sofa.png" alt="Loose Furniture" class="offer-custom-icon">
+                                <span>Loose Furniture</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">grid_on</span>
-                                <span>Grid Ceiling</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/temple.png" alt="Pooja Unit" class="offer-custom-icon">
+                                <span>Pooja Unit</span>
                             </a>
-                            <a href="commercial.html" class="offer-icon-item">
-                                <span class="material-symbols-outlined">campaign</span>
-                                <span>Branding</span>
+                            <a href="residential.html" class="offer-icon-item">
+                                <img src="images/what_we_offer/workspace (1).png" alt="Study Unit" class="offer-custom-icon">
+                                <span>Study Unit</span>
                             </a>
                         </div>
                     </div>
 
                 </div>
+
+                <div class="reveal" style="text-align: center; margin-top: 50px;">
+                    <p style="font-size: 1.3rem; font-weight: 600; color: var(--brand-orange, #e07b39); text-transform: uppercase; letter-spacing: 3px; margin: 0;">End To End Solutions</p>
+                </div>
             </div>
         </section>
+
 
         <!-- Our Factories -->
         <section class="factories-section section-padding" id="factories">
@@ -267,7 +358,8 @@
                         <span class="factory-tag">Aluminium</span>
                         <h3>Aluminium Fabrication Unit</h3>
                         <div class="factory-row-meta">
-                            <span><span class="material-symbols-outlined">location_on</span>Thirumulaivoyil, Ambattur</span>
+                            <span><span class="material-symbols-outlined">location_on</span>Thirumullaivoyil,
+                                Ambattur</span>
                             <span><span class="material-symbols-outlined">square_foot</span>2500 sqft</span>
                         </div>
                         <p>Equipped with advanced cutting and milling machinery for precision aluminium fabrication –
@@ -303,7 +395,7 @@
                         <h3>Wood Processing Unit</h3>
                         <div class="factory-row-meta">
                             <span><span class="material-symbols-outlined">location_on</span>Pothur, Chennai</span>
-                            <span><span class="material-symbols-outlined">square_foot</span>3000 sqft</span>
+                            <span><span class="material-symbols-outlined">square_foot</span>5000 sqft</span>
                         </div>
                         <p>Modern panel processing and finishing machinery delivering precise cutting, seamless edge
                             finishing, and durable laminate bonding for high-quality modular and customized interior
@@ -324,30 +416,27 @@
                     <h2>Our Clients</h2>
                     <p>Trusted by industry leaders and esteemed organizations.</p>
                 </div>
-                <div class="clients-marquee reveal">
-                    <div class="marquee-track">
-                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy">
-                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy">
-                        <img src="images/century_ply.png" alt="Client 3" loading="lazy">
-                        <img src="images/indocool.webp" alt="Client 6" loading="lazy">
-                        <img src="images/km.png" alt="Client 7" loading="lazy">
-                        <img src="images/opmobility.png" alt="Client 8" loading="lazy">
-                        <img src="images/rks.webp" alt="Client 9" loading="lazy">
-                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy">
-                        <img src="images/swanag.webp" alt="Client 11" loading="lazy">
-                        <img src="images/tidc.webp" alt="Client 12" loading="lazy">
-                        <!-- Duplicated for Infinite Loop -->
-                        <img src="images/ashok_leyland_logo.webp" alt="Client 1" loading="lazy">
-                        <img src="images/brakes_india.webp" alt="Client 2" loading="lazy">
-                        <img src="images/century_ply.png" alt="Client 3" loading="lazy">
-                        <img src="images/indocool.webp" alt="Client 6" loading="lazy">
-                        <img src="images/km.png" alt="Client 7" loading="lazy">
-                        <img src="images/opmobility.png" alt="Client 8" loading="lazy">
-                        <img src="images/rks.webp" alt="Client 9" loading="lazy">
-                        <img src="images/sundaram.webp" alt="Client 10" loading="lazy">
-                        <img src="images/swanag.webp" alt="Client 11" loading="lazy">
-                        <img src="images/tidc.webp" alt="Client 12" loading="lazy">
-                    </div>
+                <div class="clients-grid reveal">
+                    <!-- Original -->
+                    <div class="client-logo-item"><img src="images/new_client_logo/ashok_leyland_logo.webp" alt="Ashok Leyland" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/brakes_india.webp" alt="Brakes India" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/century_ply.png" alt="Century Ply" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/indocool.webp" alt="Indocool" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/km.png" alt="KM" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/opmobility.png" alt="OP Mobility" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/rks.webp" alt="RKS" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/sundaram.webp" alt="Sundaram" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/swanag.webp" alt="Swanag" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/tidc.webp" alt="TIDC" loading="lazy"></div>
+                    <!-- New -->
+                    <div class="client-logo-item"><img src="images/new_client_logo/JB KHANNA.png" alt="JB Khanna" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/JB PRINTS.png" alt="JB Prints" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/LEGGARO COMPOSITES.png" alt="Leggaro Composites" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/SAF.jpg" alt="SAF" loading="lazy"></div>
+                    <div class="client-logo-item wide-logo"><img src="images/new_client_logo/TVS Sundharam Clayton.png" alt="TVS Sundaram Clayton" loading="lazy"></div>
+                    <div class="client-logo-item"><img src="images/new_client_logo/UNIVERSAL.jpg" alt="Universal" loading="lazy"></div>
+                    <div class="client-logo-item wide-logo"><img src="images/new_client_logo/romaa_housing.jpg" alt="Romaa Housing" loading="lazy"></div>
+                    <div class="client-logo-item wide-logo"><img src="images/new_client_logo/tropical_breweries.jpg" alt="Tropical Breweries" loading="lazy"></div>
                 </div>
             </div>
         </section>
@@ -390,7 +479,7 @@
                                 <h4>Email</h4>
                                 <p>
                                     <a href="https://www.archinterior.in" target="_blank">www.archinterior.in</a><br>
-                                    enquiry@archinterior.in
+                                    enquiry.archinterior@gmail.com
                                 </p>
                             </div>
                         </div>
@@ -449,8 +538,8 @@
                 <p>Creating lasting impressions through exceptional interior design and unparalleled craftsmanship.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/archinterior_in" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@archinteriormedia" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
 
@@ -519,4 +608,5 @@
     </script>
 
 </body>
+
 </html>
