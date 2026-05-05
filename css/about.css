@@ -1126,7 +1126,7 @@ img {
     text-align: center;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     margin-top: 80px;
     color: #ffffff;
 }

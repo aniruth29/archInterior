@@ -131,17 +131,10 @@ document.querySelectorAll('.reveal, .factory-row').forEach(el => {
     }
 
     /* =========================================
-       Parallax Effect for Banners
+       Parallax Effect for Banners (Removed to fix zoom/cut issues)
        ========================================= */
     const banners = document.querySelectorAll('.page-banner');
-    if (banners.length > 0) {
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY;
-            banners.forEach(banner => {
-                banner.style.backgroundPositionY = `${scrollPos * 0.3}px`;
-            });
-        });
-    }
+    // JS Parallax removed to keep background-size: cover and background-position: center working correctly.
 
     /* =========================================
        Form Submission interaction (Ripple Effect)

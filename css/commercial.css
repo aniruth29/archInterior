@@ -1777,7 +1777,43 @@ img {
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Spinner shown while lightbox image loads */
+.lb-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.lb-spinner::after {
+    content: '';
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-top-color: var(--brand-orange, #e47144);
+    border-radius: 50%;
+    animation: lbSpin 0.7s linear infinite;
+}
+
+@keyframes lbSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* Show spinner while loading; hide image until loaded */
+.lb-img-wrap.lb-loading .lb-spinner {
+    opacity: 1;
+}
+
+.lb-img-wrap.lb-loading .lb-img {
+    opacity: 0 !important;
+    transform: scale(0.96) !important;
 }
 
 .lb-close {

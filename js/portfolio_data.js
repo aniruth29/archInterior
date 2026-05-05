@@ -301,6 +301,49 @@ const portfolioData = {
                 "4_uni_mf.webp",
                 "5_uni_mf.webp"
             ]
+        },
+        {
+            "client": "BIADS Hosur",
+            "images": [
+                "IMG_202604011252090.JPEG",
+                "IMG_202604011252091.JPEG",
+                "IMG_2026040112520910.JPEG",
+                "IMG_202604011252092.JPEG",
+                "IMG_202604011252093.JPEG",
+                "IMG_202604011252094.JPEG",
+                "IMG_202604011252095.JPEG",
+                "IMG_202604011252096.JPEG",
+                "IMG_202604011252097.JPEG",
+                "IMG_202604011252098.JPEG",
+                "IMG_202604011252099.JPEG"
+            ]
+        },
+        {
+            "client": "Brakes Jhagadia",
+            "images": [
+                "1a.jpeg",
+                "1b.jpeg",
+                "1c.jpeg",
+                "1d.jpeg",
+                "1e.jpeg",
+                "2a.jpeg",
+                "3a.jpeg",
+                "3b.jpeg",
+                "3c.jpeg",
+                "4a.jpeg",
+                "4b.jpeg",
+                "4c.jpeg",
+                "5a.jpeg",
+                "5b.jpeg",
+                "6a.jpeg",
+                "6b.jpeg",
+                "6c.jpeg",
+                "7a.jpeg",
+                "7b.jpeg",
+                "8a.jpeg",
+                "8b.jpeg",
+                "8c.jpeg"
+            ]
         }
     ]
 };
