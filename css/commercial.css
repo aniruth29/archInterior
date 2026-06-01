@@ -210,15 +210,16 @@ img {
 }
 
 .nav-cta {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--brand-orange);
+    color: #ffffff;
+    border: 1px solid var(--brand-orange);
     padding: 10px 24px;
     border-radius: 30px;
 }
 
 .nav-cta:hover {
-    background: var(--accent-color);
-    color: #ffffff;
+    background: #ffffff;
+    color: var(--brand-orange);
 }
 
 .nav-cta::after {
