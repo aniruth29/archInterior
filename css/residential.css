@@ -16,8 +16,8 @@
     --glass-blur: blur(12px);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
-    --font-primary: 'Inter', sans-serif;
-    --font-heading: 'Inter', sans-serif;
+    --font-primary: 'Roboto', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
 
     --section-padding: 100px 5%;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2039,4 +2039,39 @@ img {
     .gallery-grid { grid-template-columns: 1fr; }
     .gallery-tabs { gap: 20px; }
     .project-images { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Custom Download Portfolio Button & Container Layout */
+.projects-actions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 30px;
+    padding-bottom: 40px;
+}
+
+.projects-actions-container .others-toggle-btn {
+    margin-top: 0;
+}
+
+.download-portfolio-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-width: 1.5px;
+}
+
+@media (min-width: 769px) {
+    .download-portfolio-btn {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-actions-container {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

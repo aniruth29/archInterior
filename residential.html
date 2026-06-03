@@ -8,7 +8,7 @@
     <meta name="description" content="Explore Arch Interior's residential interior design projects in Chennai.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
@@ -211,11 +211,15 @@
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: center; margin-top: 50px; padding-bottom: 40px;">
+                    <div class="projects-actions-container">
                         <button class="others-toggle-btn" id="othersBtn" onclick="showOthers()">
                             <span>View Other Projects</span>
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
+                        <a href="images/pdfs/resedential portfolio .pdf" download="Residential_Portfolio.pdf" class="others-toggle-btn download-portfolio-btn" id="downloadBtn" style="text-decoration: none;">
+                            <span>Download Portfolio</span>
+                            <span class="material-symbols-outlined">download</span>
+                        </a>
                     </div>
 
                 </div><!-- end projectsContent -->
@@ -291,13 +295,18 @@
             const projects = document.getElementById('projectsContent');
             const others = document.getElementById('othersContent');
             const btn = document.getElementById('othersBtn');
+            const dlBtn = document.getElementById('downloadBtn');
             const title = document.getElementById('projectsTitle');
             projects.style.opacity = '0';
             projects.style.transform = 'translateX(-100px)';
             title.style.opacity = '0';
             title.style.transform = 'translateY(-10px)';
             btn.style.opacity = '0';
-            setTimeout(() => btn.style.display = 'none', 300);
+            if (dlBtn) dlBtn.style.opacity = '0';
+            setTimeout(() => {
+                btn.style.display = 'none';
+                if (dlBtn) dlBtn.style.display = 'none';
+            }, 300);
             setTimeout(() => {
                 projects.style.display = 'none';
                 title.style.display = 'none';
@@ -310,18 +319,21 @@
             const projects = document.getElementById('projectsContent');
             const others = document.getElementById('othersContent');
             const btn = document.getElementById('othersBtn');
+            const dlBtn = document.getElementById('downloadBtn');
             const title = document.getElementById('projectsTitle');
             others.classList.remove('others-content-visible');
             others.classList.add('others-content-hidden');
             projects.style.display = 'block';
             title.style.display = '';
             btn.style.display = 'inline-flex';
+            if (dlBtn) dlBtn.style.display = 'inline-flex';
             setTimeout(() => {
                 projects.style.opacity = '1';
                 projects.style.transform = 'translateX(0)';
                 title.style.opacity = '1';
                 title.style.transform = 'translateY(0)';
                 btn.style.opacity = '1';
+                if (dlBtn) dlBtn.style.opacity = '1';
                 window.scrollTo({ top: document.getElementById('projects').offsetTop - 80, behavior: 'smooth' });
             }, 50);
         }

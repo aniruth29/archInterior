@@ -19,8 +19,8 @@
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     /* Typography */
-    --font-primary: 'Inter', sans-serif;
-    --font-heading: 'Inter', sans-serif;
+    --font-primary: 'Roboto', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
 
     /* Spacing & Utilities */
     --section-padding: 100px 5%;
